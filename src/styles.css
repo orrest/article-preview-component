@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-manrope: "Manrope", sans-serif;
+
+  --text-setting-1--line-height: 1.75rem; /*28px*/
+  --text-setting-1--letter-spacing: 0.25px;
+
+  --text-setting-2--line-height: 1.25rem; /*20px*/
+  --text-setting-2--letter-spacing: 0.12px;
+
+  --text-setting-3: 13px;
+  --text-setting-3--line-height: 1.25rem;
+  --text-setting-3--letter-spacing: 5px;
+
+  --color-dark-gray-blue: hsl(217, 19%, 35%);
+  --color-dark-blue: hsl(214, 17%, 51%);
+  --color-gray-blue:  hsl(212, 23%, 69%);
+  --color-light-gray-blue: hsl(210, 46%, 95%);
+}
+
+@layer base {
+  * {
+    @apply p-0 m-0 box-border;
+  }
+}
