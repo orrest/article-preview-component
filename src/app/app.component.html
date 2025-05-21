@@ -2,75 +2,86 @@
   <div class="relative">
     <!--  Layout-->
     <div
-      class="flex max-w-80 flex-col gap-4 overflow-clip rounded-xl shadow-md"
+      class="flex max-w-80 flex-col gap-4 overflow-clip rounded-xl shadow-md sm:max-w-[45rem] sm:flex-row"
     >
       <!--  Image-->
-      <section>
+      <section class="hidden sm:block sm:w-2/5">
         <img
-          class="h-52 w-full"
+          class="h-full w-full object-cover object-left"
+          width="285"
+          height="280"
           ngSrc="drawers.jpg"
-          width="600"
-          height="528"
+          alt="Drawers"
+        />
+      </section>
+      <section class="sm:hidden">
+        <img
+          class="h-[12.5rem] w-[20.4rem] object-cover object-top"
+          width="327"
+          height="200"
+          ngSrc="drawers.jpg"
           alt="Drawers"
         />
       </section>
 
-      <!--  Text-->
-      <section class="px-8">
-        <h2
-          class="font-manrope text-setting-1 text-dark-gray-blue text-[1rem] font-bold"
-        >
-          {{ title }}
-        </h2>
-
-        <p
-          class="font-manrope text-setting-2 text-dark-blue my-6 text-[0.81rem] font-medium"
-        >
-          {{ content }}
-        </p>
-      </section>
-
-      <!--  Resume-->
-      <section class="flex flex-row items-center justify-between px-8 pb-3">
-        <!--Author-->
-        <div class="flex items-center space-x-3">
-          <img
-            class="h-10 w-10 rounded-full"
-            ngSrc="avatar-michelle.jpg"
-            width="175"
-            height="175"
-            alt="Michelle Appleton"
-          />
-          <div class="font-manrope text-setting-2 text-[0.85rem]">
-            <p class="text-dark-gray-blue font-bold">{{ name }}</p>
-            <p class="text-gray-blue font-medium">{{ date }}</p>
-          </div>
-        </div>
-
-        <!--Share icon-->
-        <button
-          (click)="onShareClick()"
-          class="bg-light-gray-blue hover:bg-dark-gray-blue group z-10 rounded-full p-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="group-hover:fill-white"
-            fill="#6E8098"
-            width="15"
-            height="13"
+      <div class="flex flex-col sm:w-3/5 sm:py-4">
+        <!--  Text-->
+        <section class="px-8">
+          <h2
+            class="font-manrope text-setting-1 text-dark-gray-blue text-[1rem] font-bold sm:text-[1.3rem]"
           >
-            <path
-              d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+            {{ title }}
+          </h2>
+
+          <p
+            class="font-manrope text-setting-2 text-dark-blue my-6 text-[0.81rem] font-medium"
+          >
+            {{ content }}
+          </p>
+        </section>
+
+        <!--  Resume-->
+        <section class="flex flex-row items-center justify-between px-8 pb-3">
+          <!--Author-->
+          <div class="flex items-center space-x-3">
+            <img
+              class="h-10 w-10 rounded-full"
+              ngSrc="avatar-michelle.jpg"
+              width="175"
+              height="175"
+              alt="Michelle Appleton"
             />
-          </svg>
-        </button>
-      </section>
+            <div class="font-manrope text-setting-2 text-[0.85rem]">
+              <p class="text-dark-gray-blue font-bold">{{ name }}</p>
+              <p class="text-gray-blue font-medium">{{ date }}</p>
+            </div>
+          </div>
+
+          <!--Share icon-->
+          <button
+            (click)="onShareClick()"
+            class="bg-light-gray-blue hover:bg-dark-gray-blue group z-10 rounded-full p-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="group-hover:fill-white"
+              fill="#6E8098"
+              width="15"
+              height="13"
+            >
+              <path
+                d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"
+              />
+            </svg>
+          </button>
+        </section>
+      </div>
     </div>
 
     <!--  Share popup-->
     @if (showShare()) {
       <div
-        class="bg-dark-gray-blue absolute bottom-0 flex h-16 w-full flex-row items-center gap-3 rounded-b-xl px-8 py-3 sm:h-auto"
+        class="bg-dark-gray-blue absolute bottom-0 flex h-16 w-full flex-row items-center gap-3 rounded-b-xl px-8 py-3 sm:-right-16 sm:bottom-20 sm:h-auto sm:w-auto sm:rounded-xl"
       >
         <span class="text-gray-blue text-setting-3">SHARE</span>
         <a href="#">
@@ -101,7 +112,7 @@
           />
         </a>
         <div
-          class="border-dark-gray-blue absolute bottom-0 left-1/2 h-0 w-0 -translate-x-1/2 translate-y-full transform border-t-8 border-r-8 border-l-8 border-r-transparent border-l-transparent opacity-0"
+          class="border-dark-gray-blue absolute bottom-0 left-1/2 h-0 w-0 -translate-x-1/2 translate-y-full transform border-t-8 border-r-8 border-l-8 border-r-transparent border-l-transparent opacity-0 sm:opacity-100"
         ></div>
       </div>
     }
